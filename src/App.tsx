@@ -5,12 +5,12 @@ import Sidebar from "./page.tsx/Sidebar";
 import Navbar from "./component/Navbar";
 
 function App() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false); 
 
   return (
     <div>
-      <Navbar setCollapsed={collapsed} />
-
+      <Navbar setCollapsed={setCollapsed} collapsed={collapsed} /> 
+      
       <div className="flex h-full">
         <Sidebar collapsed={collapsed} />
         <main>
