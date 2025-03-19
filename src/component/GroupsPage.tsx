@@ -13,7 +13,8 @@ export function GroupsPage() {
       </div>
 
       <Table
-        style={{ width: "1300px" }}
+      className="w-full"
+        style={{ width: "1745px" }}
         columns={[
           {
             title: "ID",

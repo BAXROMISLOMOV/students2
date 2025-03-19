@@ -35,7 +35,7 @@ export function Userpage() {
     bordered
     rowKey="id"
     className="shadow-lg rounded-lg w-full"
-    style={{ width: "1760px" }}
+    style={{ width: "1645px" }}
     columns={[
       {
         title: "ID",
