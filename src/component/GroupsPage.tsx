@@ -1,29 +1,25 @@
 import { Switch, Table } from "antd";
 import { useGlobalStore } from "../store/store";
-import { StudentsGroup } from "./StudentsGroup";
+import { GroupsForm } from "./GroupsForm";
 
 export function GroupsPage() {
   const groups = useGlobalStore((state) => state.groups);
-
   return (
     <div className="container mx-auto p-10">
       <div className="flex justify-between mb-5 ">
         <h1 className="text-4xl font-bold">Groups </h1>
-        <StudentsGroup />
+        <GroupsForm />
       </div>
 
       <Table
-      className="w-full"
-        style={{ width: "1745px" }}
+        bordered
+        rowKey="id"
+        className="shadow-lg rounded-lg w-full"
+        style={{ width: "1645px" }}
         columns={[
           {
             title: "ID",
             dataIndex: "id",
-          },
-
-          {
-            title: "Image",
-            dataIndex:"image"
           },
           {
             title: "Nomi",

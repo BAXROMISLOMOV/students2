@@ -2,27 +2,22 @@ import { Button, Drawer, Form, Input, Select, Switch } from "antd";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import { useGlobalStore } from "../store/store";
 import { useState } from "react";
-
 export function StudentForm() {
   const groups = useGlobalStore((state) => state.groups);
   const students = useGlobalStore((s) => s.students);
   const [form] = Form.useForm();
   const [open, setOpen] = useState(false);
-
   const showDrawer = () => {
     setOpen(true);
   };
-
   const onClose = () => {
     setOpen(false);
   };
-
   return (
     <>
       <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />} className="flex items-center gap-2">
         Qoshish
       </Button>
-
       <Drawer title="Talaba qo'shish" onClose={onClose} open={open} className="p-4">
         <Form
           form={form}
@@ -40,7 +35,6 @@ export function StudentForm() {
           >
             <Input placeholder="Talaba ismini kiriting" />
           </Form.Item>
-
           <Form.Item
             label="Guruh"
             name="group_id"
@@ -51,11 +45,9 @@ export function StudentForm() {
               options={groups?.map((i) => ({ label: i.name, value: i.id }))}
             />
           </Form.Item>
-
           <Form.Item label="Faollik" name="active" valuePropName="checked">
             <Switch />
           </Form.Item>
-
           <Form.Item>
             <div className="flex justify-between">
               <Button onClick={onClose} icon={<CloseOutlined />} danger>

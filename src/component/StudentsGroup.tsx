@@ -1,22 +1,17 @@
 import { Button, Drawer, Form, Input, Switch } from "antd";
 import { useState } from "react";
 import { GetRandomId } from "../Math/math";
-
 export function StudentsGroup() {
-
   const [form] = Form.useForm();
   const [open, setOpen] = useState(false);
-
   const showDrawer = () => setOpen(true);
   const onClose = () => setOpen(false);
-
   const handleFinish = (values: any) => {
     const newGroup = { ...values, firstNmae: GetRandomId() };
     ([newGroup]);
     form.resetFields();
     onClose();
   };
-
   return (
     <>
       <Button type="primary" onClick={showDrawer}>
